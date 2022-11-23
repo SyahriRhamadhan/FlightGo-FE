@@ -1,1 +1,1 @@
-// Code was written by Kelompok c4 FSW1
+Code was written by Kelompok c4 FSW1
