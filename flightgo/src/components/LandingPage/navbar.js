@@ -2,9 +2,11 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <div>
-      Ini menu LandingPage dikerjakan hilmy, semangat!
-    </div>
+    
+      <div className="bg-sky-500">
+        <div>Hello, ini masih tahap setup oleh hlmy</div>
+        </div>
+  
   )
 }
 
