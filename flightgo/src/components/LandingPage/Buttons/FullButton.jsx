@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import '../landingPage.css'
 
 export default function FullButton({ title, action, border }) {
   return (
@@ -14,16 +15,16 @@ export default function FullButton({ title, action, border }) {
 }
 
 const Wrapper = styled.button`
-  border: 1px solid ${(props) => (props.border ? "#707070" : "#7620ff")};
-  background-color: ${(props) => (props.border ? "transparent" : "#7620ff")};
+  border: 1px solid ${(props) => (props.border ? "#F66F4D" : "#F66F4D")};
+  background-color: ${(props) => (props.border ? "transparent" : "#F66F4D")};
   width: 100%;
   padding: 15px;
   outline: none;
-  color: ${(props) => (props.border ? "#707070" : "#fff")};
+  color: ${(props) => (props.border ? "#F66F4D" : "#fff")};
   :hover {
-    background-color: ${(props) => (props.border ? "transparent" : "#580cd2")};
-    border: 1px solid #7620ff;
-    color: ${(props) => (props.border ? "#7620ff" : "#fff")};
+    background-color: ${(props) => (props.border ? "transparent" : "#F66F4D")};
+    border: 1px solid #F66F4D;
+    color: ${(props) => (props.border ? "#F66F4D" : "#fff")};
   }
 `;
 

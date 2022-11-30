@@ -12,7 +12,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 import "./Register.css";
-import IconFLightgo from '../assets/Icon.png';
+import IconFLightgo from '../assets/img/Icon.png';
 
 
 function Register() {

@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import '../landingPage.css'
+
 // Components
 import Sidebar from "../Nav/Sidebar";
 import Backdrop from "../Elements/Backdrop";
+
 // Assets
-import LogoIcon from "../../assets/svg/Logo";
-import BurgerIcon from "../../assets/svg/BurgerIcon";
+import LogoIcon from "../../assets/svg/LandingPage/Logo";
+import BurgerIcon from "../../assets/svg/LandingPage/BurgerIcon";
+import lonceng from '../../assets/img/LandingPage/Nav/lonceng.png'
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
@@ -19,63 +23,54 @@ export default function TopNavbar() {
     };
   }, [y]);
 
-
   return (
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
       <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "80px" }}>
         <NavInner className="container flexSpaceCenter">
-          <Link className="pointer flexNullCenter" to="home" smooth={true}>
+          <Link className="flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
-            {/* <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
-              Flightgo
-            </h1> */}
           </Link>
+          
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
             <BurgerIcon />
           </BurderWrapper>
+
           <UlWrapper className="flexNullCenter">
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="home" spy={true} smooth={true} offset={-80}>
-                Home
-              </Link>
+              <a href='/login' className="text-gray-600" style={{ padding: "10px 15px" }} spy={true} smooth={true} offset={-80}>
+                Wishlist
+              </a>
             </li>
+
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="services" spy={true} smooth={true} offset={-80}>
-                About Us
-              </Link>
+              <a href='/login' className="text-gray-600" style={{ padding: "10px 15px" }}  spy={true} smooth={true} offset={-80}>
+                History
+              </a>
             </li>
+
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="projects" spy={true} smooth={true} offset={-80}>
-                Destinations
-              </Link>
+              <a href='/login' className="text-gray-600" style={{ padding: "10px 15px" }}  spy={true} smooth={true} offset={-80}>
+                Notification
+              </a>
             </li>
+
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="blog" spy={true} smooth={true} offset={-80}>
-                Testmonials
-              </Link>
-            </li>
-            {/* <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="pricing" spy={true} smooth={true} offset={-80}>
-                Pricing
-              </Link>
-            </li> */}
-            <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy={true} smooth={true} offset={-80}>
-                Contact
-              </Link>
+              <a href='/login' className="text-gray-600" style={{ padding: "10px 15px" }} spy={true} smooth={true} offset={-80}>
+                Profile
+              </a>
             </li>
           </UlWrapper>
+
           <UlWrapperRight className="flexNullCenter">
-            {/* <li className="semiBold font15 pointer">
-              <a href="/" style={{ padding: "10px 30px 10px 0" }}>
-                lonceng
-              </a>
-            </li> */}
+            <li className="semiBold font15 pointer">
+              <img href="/" src={lonceng} alt='lonceng' style={{height: 40, padding: "10px 30px 10px 0" }}/>
+            </li>
+
             <li className="semiBold font15 pointer flexCenter">
-              <a href="/" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
-                Log in
+              <a href="/login" className="radius8 bg-orange-500 text-white" style={{ padding: "4px 15px" }}>
+                Sign In
               </a>
             </li>
           </UlWrapperRight>
@@ -118,5 +113,4 @@ const UlWrapperRight = styled.ul`
     display: none;
   }
 `;
-
 

@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import '../landingPage.css'
+
 // Assets
-import QuoteIcon from "../../assets/svg/Quotes";
+import QuoteIcon from "../../assets/svg/LandingPage/Quotes";
 
 export default function TestimonialBox({ text, author }) {
   return (
