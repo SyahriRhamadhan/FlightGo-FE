@@ -58,12 +58,7 @@ export default function Search() {
 									<div className="col-md-2">
 										<div className="form-group">
 											<span className="form-label">Passenger</span>
-											<select className="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-											</select>
-											<span className="select-arrow"></span>
+											<input className="form-control" type="text" placeholder="0"/>
 										</div>
 									</div>	
 								</div>

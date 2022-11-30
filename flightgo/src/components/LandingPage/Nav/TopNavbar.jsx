@@ -10,11 +10,11 @@ import Backdrop from "../Elements/Backdrop";
 // Assets
 import LogoIcon from "../../assets/svg/LandingPage/Logo";
 import BurgerIcon from "../../assets/svg/LandingPage/BurgerIcon";
-import lonceng from '../../assets/img/LandingPage/Nav/lonceng.png'
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
   const [sidebarOpen, toggleSidebar] = useState(false);
+  const [nav, setNav] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => setY(window.scrollY));
@@ -23,11 +23,21 @@ export default function TopNavbar() {
     };
   }, [y]);
 
+  const changeBackground = () => {
+    if(window.scrollY >= 80){
+      setNav(true);
+    } else {
+      setNav(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeBackground);
+
   return (
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "80px" }}>
+      <Wrapper className={nav ? 'nav activ' : 'nav'} style={y > 100 ? { height: "60px" } : { height: "80px" }}>
         <NavInner className="container flexSpaceCenter">
           <Link className="flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
@@ -64,9 +74,6 @@ export default function TopNavbar() {
           </UlWrapper>
 
           <UlWrapperRight className="flexNullCenter">
-            <li className="semiBold font15 pointer">
-              <img href="/" src={lonceng} alt='lonceng' style={{height: 40, padding: "10px 30px 10px 0" }}/>
-            </li>
 
             <li className="semiBold font15 pointer flexCenter">
               <a href="/login" className="radius8 bg-orange-500 text-white" style={{ padding: "4px 15px" }}>
@@ -86,6 +93,8 @@ const Wrapper = styled.nav`
   top: 0;
   left: 0;
   z-index: 999;
+  background: transparent;
+  transition: 0.3s ease;
 `;
 const NavInner = styled.div`
   position: relative;
