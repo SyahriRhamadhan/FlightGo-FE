@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { HashRouter, Route, Routes, } from 'react-router-dom'
+=======
+import Landing from './pages/LandingPage/Landing'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+>>>>>>> c38ae96ad483f1ef22d7e586dd41bfbe6d1fce69
 import RegisterPage from "./pages/AuthPage/RegisterPage";
 import LoginPage from "./pages/AuthPage/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
