@@ -1,15 +1,40 @@
-import Index from "./components/LandingPage/index";
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes, } from 'react-router-dom'
 import RegisterPage from "./pages/AuthPage/RegisterPage";
 import LoginPage from "./pages/AuthPage/LoginPage";
+import ProfilePage from "./pages/ProfilePage";
+import React, { Suspense } from 'react'
+import './scss/style.scss'
 function App() {
+  const loading = (
+    <div className="pt-3 text-center">
+      <div className="sk-spinner sk-spinner-pulse"></div>
+    </div>
+  )
+
+  const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
+
+
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path='/login' element={<LoginPage/>}/>
-      <Route path='/register' element={<RegisterPage/>}/>
-    </Routes>
-    </BrowserRouter>
+    <>
+      {/* {
+        route.pathname === '/admin'
+        ? <Sidebar/> 
+        : route.pathname === '/ticketschedule' ? <Sidebar />
+        : route.pathname === '/listorder' ? <Sidebar />
+        : ''
+        
+      } */}
+      <HashRouter>
+        <Suspense fallback={loading}>
+          <Routes>
+            <Route path='/login' element={<LoginPage/>}/>
+            <Route path='/register' element={<RegisterPage/>}/>
+            <Route path='/profile' element={<ProfilePage/>}/>
+            <Route path='*' element={<DefaultLayout/>}/>
+          </Routes>
+        </Suspense>
+      </HashRouter>
+    </>
   );
 }
 

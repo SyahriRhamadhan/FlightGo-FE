@@ -44,7 +44,7 @@ function Login() {
                 <MDBIcon fab icon="google" className="mx-2"/>
                 Sign in with google
               </MDBBtn>
-              <p className="text-center mt-3">Not a Flightgo member? <a href="/register"><u>Sign Up Now</u></a></p>
+              <p className="text-center mt-3">Not a Flightgo member? <a href="#/register"><u>Sign Up Now</u></a></p>
 
             </MDBCardBody>
           </MDBCard>
